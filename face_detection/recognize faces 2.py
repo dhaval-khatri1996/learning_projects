@@ -33,11 +33,11 @@ while True:
         for i in range(len(face_locations)):
             matches = face_recognition.compare_faces(known_face_encodings, face_encodings[i])
             print(matches)
-            i = 0
+            j = 0
             location = face_locations[i]
-            for i in range(len(matches)):
-                if(matches[i]):
-                    cv2.putText(frame, file_names[i], (location[3]+12,location[2]+12), font, 1, (0,255,0), 1)
+            for j in range(len(matches)):
+                if(matches[j]):
+                    cv2.putText(frame, file_names[j], (location[3]+12,location[2]+12), font, 1, (0,255,0), 1)
                     break
             cv2.rectangle(frame, (location[3], location[0]), (location[1], location[2]), (0, 0, 255), 2)
            
